@@ -11,12 +11,14 @@ public class TreeNode
 
 public class Solution
 {
-    public TreeNode Rebuild(int[] preoder,int[] inoder)
+    public TreeNode Rebuild(int[] preorder,int[] inorder)
     {
+        TreeNode root=Reconstruct(preorder,0,preorder.Length-1,inorder,0,inorder.Length-1);
 
+        return root;
     }
 
-    public TreeNode Reconstruct(int[] preoder,int startpre,int endpre,int[] inoder,int startin,int endin)
+    public TreeNode Reconstruct(int[] preorder,int startpre,int endpre,int[] inorder,int startin,int endin)
     {
         if(startpre>endpre||startin>endin)
         {
@@ -27,10 +29,10 @@ public class Solution
 
         for(int i=startin;i<=endin;i++)
         {
-            if(inoder[i]==preoder[startpre])
+            if(inorder[i]==preorder[startpre])
             {
-                root.left=Reconstruct(preoder,startpre+1,startpre+i-startin,inoder,startin,i-1);
-                root.right=Reconstruct(preoder,i-startin+startpre+1,endpre,inoder,i+1,endin);
+                root.left=Reconstruct(preorder,startpre+1,startpre+i-startin,inorder,startin,i-1);
+                root.right=Reconstruct(preorder,i-startin+startpre+1,endpre,inorder,i+1,endin);
                 break;
 
                 //startpre+1是前序遍历左子树开始的位置
