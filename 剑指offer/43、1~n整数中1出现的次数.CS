@@ -7,7 +7,7 @@ public class Solution
             return 0;
         }
 
-        string s=Covert.ToString(n);
+        string s=n.ToString();
         char[] chars=s.ToCharArray();
         int[] nums=new int[chars.Length]; 
         for(int i=0;i<chars.Length;i++)
