@@ -7,7 +7,7 @@ public class Solution
             return 0;
         }
 
-        int[] dp=new dp[matrix.GetLength(1)];
+        int[] dp=new int[matrix.GetLength(1)];
 
         for(int i=0;i<matrix.GetLength(0);i++)
         {
