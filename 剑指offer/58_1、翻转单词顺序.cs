@@ -1,5 +1,6 @@
 public class Solution
 {
+    //直接用StringBuilder翻转
     public string ReverseSentence1(string s)
     {
         if(string.IsNullOrEmpty(s))
@@ -18,6 +19,7 @@ public class Solution
         return sb.ToString();
     }
 
+    //先整个翻转字符串，再逐个单词翻转
     public string ReverseSentence2(string s)
     {
         if(string.IsNullOrEmpty(s))
